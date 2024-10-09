@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 
 export default function App({ siteInfo, allWords, dir, allLangs, allVideos, bookLinkData }) {
   const { locale } = useRouter();
-  const imagePath = `/assets/svgs/logo.svg`;
+  const imagePath = `/assets/imgs/logo.png`;
   const SiteDescription = siteInfo?.description;
   const mainBook = bookLinkData?.languages?.find((lang) => lang.code === locale)
   const mainBookURL = mainBook?.link
@@ -67,7 +67,7 @@ export default function App({ siteInfo, allWords, dir, allLangs, allVideos, book
         <meta property="og:description" content={SiteDescription} />
         <meta
           property="og:image"
-          content={`https://portal.thisislam.net${imagePath}`}
+          content={`  ${imagePath}`}
         />
         <meta itemProp="name" content={siteInfo?.site_name} />
         <meta itemProp="author" content={siteInfo?.site_name} />
