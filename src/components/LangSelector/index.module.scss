@@ -1,0 +1,127 @@
+// /* index.module.scss */
+// .container {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   height: 100vh;
+// }
+
+// .languageSelectionBox {
+//   text-align: center;
+//   padding: 50px;
+//   border-radius: 12px;
+//   width: 300px;
+//   height: 100%;
+//   position: relative;
+//   overflow: hidden;
+// }
+
+// .languageSelectionBox h1 {
+//   font-size: 28px;
+//   margin-bottom: 20px;
+//   font-weight: bold;
+// }
+
+// .languageSelectionBox h1 span {
+//   display: inline-block;
+//   color: #2a2a72;
+//   border-bottom: 2px solid #2a2a72;
+//   padding-bottom: 2px;
+// }
+
+// .languageList {
+//   position: relative;
+//   height: 100px; /* Height to show only 1 language fully */
+// }
+
+// .languageOption {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   padding: 10px 0;
+//   font-size: 24px;
+//   text-align: center;
+//   background: #fff;
+//   transition: transform 0.5s ease, opacity 0.5s ease;
+// }
+
+// .languageOption span {
+//   display: block;
+//   font-size: 14px;
+//   color: #777;
+//   margin-top: 5px;
+// }
+
+// .selected {
+//   font-weight: bold;
+//   color: #2a2a72;
+// }
+
+/* index.module.scss */
+/* index.module.scss */
+/* index.module.scss */
+
+.menu_container {
+  display: flex;
+
+  .languages {
+    margin: auto;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .icon_container {
+      background: #e0dff3;
+      display: flex;
+      margin-top: 21px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      width: 164.29px;
+
+      img {
+        margin: auto;
+        width: 49px;
+        height: 39px;
+      }
+    }
+
+    .vertical_swiper {
+      height: 100%;
+      width: 200px;
+      margin-top: 23px;
+
+      .language_item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        opacity: 0.5;
+        border-bottom: 1px solid transparent;
+        text-decoration: none;
+        color: unset;
+        .language_name {
+          color: #5e5e5e;
+          font-size: 32px;
+          font-weight: 400;
+          text-align: center;
+        }
+      }
+
+      .language_item.selected {
+        opacity: 1;
+        border-image-source: linear-gradient(
+          90deg,
+          #ffffff 12%,
+          #b2b2b2 50%,
+          #ffffff 89%
+        );
+        border-image-slice: 1;
+      }
+    }
+  }
+}

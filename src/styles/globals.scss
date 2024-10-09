@@ -1,0 +1,57 @@
+:root {
+  --max-width: 1100px;
+  --border-radius: 12px;
+
+  --grad-gold: linear-gradient(117.3deg, #e7ca81 11.7%, #be9e4e 98.94%);
+  --grad-gray: linear-gradient(117.3deg, #858585 11.7%, #343434 98.94%);
+
+  --color-white: #ffffff;
+  --sec-white: #f0f0f0;
+  --color-blue: #1d1b70;
+  --color-gold: #b88d26;
+  --color-gray: #383838;
+  --sans-font: "__TheSans_3cb6d3", "__TheSans_Fallback_3cb6d3";
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  line-height: unset !important;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  color: unset;
+}
+
+p {
+  font-size: 16px;
+  margin: 20px auto;
+  font-weight: 400;
+}
+
+#lang_container .swiper-pagination {
+  display: none;
+}
+
+.mobile {
+  @media screen and (min-width: 992px) {
+    display: none;
+  }
+}
+
+.desktop {
+  @media screen and (max-width: 992px) {
+    display: none;
+  }
+}
