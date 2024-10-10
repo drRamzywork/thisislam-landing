@@ -12,8 +12,6 @@ export default function App({ siteInfo, allWords, dir, allLangs, allVideos, book
   const mainBookURL = mainBook?.link
 
   return (
-
-
     <>
       <Head>
         <title>{siteInfo?.site_name}</title>

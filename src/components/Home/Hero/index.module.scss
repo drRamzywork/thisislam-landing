@@ -183,8 +183,8 @@ section.hero[dir="ltr"] {
     }
 
     .main_book {
-      @media screen and (min-width: 992px) {
-        // position: relative;
+      @media screen and (max-width: 992px) {
+        left: -70px;
       }
       img {
         width: 100%;
@@ -205,6 +205,10 @@ section.hero[dir="ltr"] {
       @media screen and (min-width: 992px) {
         width: 400px;
         margin-top: 40px;
+      }
+
+      @media screen and (max-width: 992px) {
+        margin-top: 44px;
       }
       p {
         font-weight: 400;

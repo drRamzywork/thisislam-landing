@@ -49,11 +49,12 @@ const Hero = ({ allWords, dir, mainBookURL }) => {
 
             <div className={styles.desc}>
               <p>{allWords?.main_desc}</p>
-              <div className={styles.btn_container}>
+
+              <a href={mainBookURL} target='_blanked' className={styles.btn_container}>
                 <button>
                   {allWords?.main_download}
                 </button>
-              </div>
+              </a>
             </div>
 
           </div>
