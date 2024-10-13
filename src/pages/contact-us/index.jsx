@@ -112,7 +112,7 @@ export default ContactUs
 
 
 
-export async function getStaticProps({ locale }) {
+export async function getServerSideProps({ locale }) {
   const baseURL = "https://app.thisislam.net/api";
   try {
     const allLangsRes = await fetch(`${baseURL}/all_langs`);
