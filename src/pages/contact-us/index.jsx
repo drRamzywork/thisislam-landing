@@ -5,40 +5,56 @@ import { FaWhatsapp } from "react-icons/fa";
 import Footer from '@/components/Footer';
 
 const ContactUs = ({ dir, allWords, allLangs }) => {
+  const contactWords = allWords?.main_contact?.split(" ");
+
   return (
     <>
       <Navbar dir={dir?.data?.dir} allWords={allWords} allLangs={allLangs} />
-      <section className={styles.contact_us} dir='ltr'>
+      <div className={styles.hero_bg}>
+        <img src="/assets/imgs/hero_bg.png" alt="" />
+      </div>
+
+      <section className={styles.contact_us} dir={dir?.data?.dir}>
+
+
+
         <div className="container">
 
           <div className={styles.sec_container}>
             <div className={styles.sec_title}>
               <h2>
-                <span>Get in</span>
+                {contactWords && contactWords.length === 2 ? (
+                  <>
+                    <span>{contactWords[0]}</span>
+                    {` `}
+                    {contactWords[1]}
+                  </>
+                ) : (
+                  ""
+                )}
 
-                Touch
               </h2>
             </div>
 
             <form action="">
               <div className={styles.name}>
-                <input type="text" name="name" id="name" required placeholder='Name' />
+                <input type="text" name="name" id="name" required placeholder={allWords?.mian_name} />
               </div>
               <div className={styles.email}>
-                <input type="email" name="email" id="email" required placeholder='Email' />
+                <input type="email" name="email" id="email" required placeholder={allWords?.main_email} />
               </div>
 
               <div className={styles.title}>
-                <input type="text" name="title" id="title" required placeholder='Title' />
+                <input type="text" name="title" id="title" required placeholder={allWords?.form_title} />
               </div>
 
               <div className={styles.text_area}>
-                <textarea name="textarea" id="textarea" placeholder='Your Message'></textarea>
+                <textarea name="textarea" id="textarea" placeholder={allWords?.main_message}></textarea>
               </div>
 
 
               <div className={styles.btn_container}>
-                <button>SEND</button>
+                <button>{allWords?.main_send}</button>
               </div>
 
 
@@ -47,44 +63,47 @@ const ContactUs = ({ dir, allWords, allLangs }) => {
 
 
             <div className={styles.info}>
-              <div className={styles.box}>
-                <div className={styles.icon_container}>
-                  <FaWhatsapp />
-                </div>
-
-                <div className={styles.text_container}>
-                  <div className={styles.title}>
-                    <p>Whatsapp</p>
+              <a target="_blank" href="https://api.whatsapp.com/send/?phone=447405933742" >
+                <div className={styles.box}>
+                  <div className={styles.icon_container}>
+                    <FaWhatsapp />
                   </div>
-                  <span>‭+44 7405 933742</span>
-                </div>
-              </div>
 
-
-
-              <div className={styles.box}>
-                <div className={styles.icon_container}>
-                  <img src="/assets/svgs/mail.svg" alt="" />
-                </div>
-
-                <div className={styles.text_container}>
-                  <div className={styles.title}>
-                    <p>Email</p>
+                  <div className={styles.text_container}>
+                    <div className={styles.title}>
+                      <p>Whatsapp</p>
+                    </div>
+                    <span>‭+44 7405 933742</span>
                   </div>
-                  <span>info@modern-guide.com</span>
-                </div>
-              </div>
 
+                </div>
+              </a>
+
+
+              <a target="_blank" rel="noreferrer" href="mailto:info@modern-guide.com" >
+                <div className={styles.box}>
+                  <div className={styles.icon_container}>
+                    <img src="/assets/svgs/mail.svg" alt="" />
+                  </div>
+
+                  <div className={styles.text_container}>
+                    <div className={styles.title}>
+                      <p>{allWords?.main_email}</p>
+                    </div>
+                    <span>info@modern-guide.com</span>
+                  </div>
+                </div>
+              </a>
 
 
             </div>
           </div>
         </div>
 
-      </section>
+      </section >
 
 
-      <Footer />
+      <Footer allWords={allWords} dir={dir?.data?.dir} />
     </>
   )
 }

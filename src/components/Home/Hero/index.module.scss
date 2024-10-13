@@ -104,7 +104,6 @@ section.hero {
         font-size: 16px;
         text-align: justify;
         color: var(--color-gray);
-        font-family: var(--sans-font);
         margin: 0;
       }
       .btn_container {
@@ -116,7 +115,8 @@ section.hero {
           border: none;
           background: var(--grad-gold);
           height: 41.23px;
-          width: 200px;
+          min-width: 200px;
+          padding: 0px 8px;
           text-align: center;
           color: var(--color-white);
           font-size: 21.39px;
@@ -215,7 +215,6 @@ section.hero[dir="ltr"] {
         font-size: 16px;
         text-align: justify;
         color: var(--color-gray);
-        font-family: var(--sans-font);
         margin: 0;
       }
       .btn_container {
@@ -223,6 +222,9 @@ section.hero[dir="ltr"] {
         margin-top: 40px;
 
         button {
+          position: relative;
+          z-index: 15;
+          cursor: pointer;
           margin: auto;
           border: none;
           background: var(--grad-gold);

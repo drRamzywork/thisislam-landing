@@ -9,16 +9,17 @@ import LangSelector from '../LangSelector';
 
 
 const Navbar = ({ dir, allWords, allLangs }) => {
+  const { locale } = useRouter();
+
   const links = [
     { title: allWords?.main_chose_lang, hasPage: true },
     { title: allWords?.main_about, link: '#', hasPage: false },
-    { title: allWords?.man_muslim_guide + " " + allWords?.main_new, link: '#', hasPage: false },
-    { title: allWords?.man_muslim_guide, link: '#', hasPage: false },
-    { title: allWords?.main_cities, link: '#', hasPage: false },
+    { title: allWords?.man_muslim_guide + " " + allWords?.main_new, link: `https://newmuslimguide.com/${locale}`, hasPage: false },
+    { title: allWords?.man_muslim_guide, link: `https://imuslimguide.com/${locale}`, hasPage: false },
+    { title: allWords?.main_cities, link: 'https://kids.thisislam.net/', hasPage: false },
     { title: allWords?.main_contact, link: '/contact-us', hasPage: false },
   ]
 
-  const { locale } = useRouter();
   const [showMenu, setShowMenu] = useState(false);
   const [showMenuLangs, setShowMenuLangs] = useState(false);
 
@@ -42,7 +43,7 @@ const Navbar = ({ dir, allWords, allLangs }) => {
 
             {showMenu &&
               <motion.div
-                animate={locale === 'ar' ? { x: [300, 0] } : { x: [-300, 0] }}
+                animate={dir === 'rtl' ? { x: [300, 0] } : { x: [-300, 0] }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
                 className={styles.menu_container} >
                 <div className={styles.close_icon} onClick={() => setShowMenu(false)}>
@@ -53,7 +54,7 @@ const Navbar = ({ dir, allWords, allLangs }) => {
                     {links.map((link, idx) =>
                       <li key={idx}>
                         {link.hasPage === true ?
-                          <a onClick={() => setShowMenuLangs(true)}> {link.title}</a>
+                          <a onClick={() => setShowMenuLangs(true)} target='_blank'> {link.title}</a>
                           :
                           <Link href={link.link}>{link.title}</Link>}
 
@@ -85,6 +86,7 @@ const Navbar = ({ dir, allWords, allLangs }) => {
                 <LangSelector allLangs={allLangs} setShowMenuLangs={setShowMenuLangs} />
               </motion.div>
             }
+
             <motion.div initial={{ opacity: 0, y: -40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, type: "tween" }} >

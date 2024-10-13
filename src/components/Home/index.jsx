@@ -16,7 +16,7 @@ const Home = ({ allWords, allVideos, dir, allLangs, mainBookURL }) => {
         <Hero allWords={allWords} dir={dir?.data?.dir} mainBookURL={mainBookURL} />
       </div>
 
-      <SwiperSection allVideos={allVideos} allWords={allWords} />
+      <SwiperSection dir={dir?.data?.dir} allVideos={allVideos} allWords={allWords} />
 
       <SwiperSection2 />
     </>

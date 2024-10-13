@@ -1,6 +1,10 @@
 footer.footer {
   background: linear-gradient(117.3deg, #e7ca81 11.7%, #be9e4e 98.94%);
 
+  a {
+    text-decoration: none;
+    color: unset;
+  }
   padding-top: 26px;
   padding-bottom: 36px;
   @media screen and (min-width: 992px) {

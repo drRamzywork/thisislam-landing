@@ -41,10 +41,14 @@ section.swiper_sec {
       margin: auto;
       @media screen and (min-width: 992px) {
         width: 921px;
+        // width: 100%;
       }
       .box {
         position: relative;
-        width: 235px;
+        // width: 235px;
+        width: 285px;
+        // width: 400px;
+        // width: 100%;
 
         .img_container {
           width: 100%;
@@ -58,13 +62,13 @@ section.swiper_sec {
         .title {
           width: 100%;
           h3 {
-            text-align: center;
             background: var(--grad-gold);
             color: var(--color-white);
 
             font-size: 22px;
             font-weight: 700;
             padding: 12px;
+            text-align: center;
           }
         }
 

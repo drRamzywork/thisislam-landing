@@ -64,7 +64,6 @@
 
 .menu_container {
   display: flex;
-
   .languages {
     margin: auto;
     height: 100vh;
@@ -73,7 +72,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 
+    // background-color: red;
     .icon_container {
       background: #e0dff3;
       display: flex;
@@ -81,6 +82,9 @@
       padding-top: 5px;
       padding-bottom: 5px;
       width: 164.29px;
+
+      position: relative;
+      z-index: 99;
 
       img {
         margin: auto;
@@ -91,8 +95,11 @@
 
     .vertical_swiper {
       height: 100%;
+      overflow: hidden;
+
       width: 200px;
       margin-top: 23px;
+      transform: translateY(-200px);
 
       .language_item {
         display: flex;

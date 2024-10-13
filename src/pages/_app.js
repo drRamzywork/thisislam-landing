@@ -2,8 +2,70 @@ import "@/styles/globals.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import localFont from "next/font/local";
 
-const TheSans = localFont({
+// const TheSans = localFont({
+//   src: [
+//     {
+//       path: "../../public/assets/fonts/TheSans-Plain.otf",
+//       weight: "400",
+//       style: "normal",
+//     },
+
+//     {
+//       path: "../../public/assets/fonts/TheSans-Bold.otf",
+//       weight: "700",
+//       style: "normal",
+//     },
+//   ],
+// });
+
+const req3a = localFont({
   src: [
+    {
+      path: "../../public/fonts/req3a1.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/req3a2.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/req3a3.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/req3a4.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/req3a5.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/req3a6.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/req3a7.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/req3a8.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/WebFonts.ttf",
+      weight: "500",
+      style: "normal",
+    },
+
     {
       path: "../../public/assets/fonts/TheSans-Plain.otf",
       weight: "400",
@@ -17,10 +79,9 @@ const TheSans = localFont({
     },
   ],
 });
-
 export default function App({ Component, pageProps }) {
   const combinedStyles = {
-    ...TheSans.style,
+    ...req3a.style,
   };
 
   return (

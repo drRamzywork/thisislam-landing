@@ -6,34 +6,24 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/free-mode';
 
+import ReactPlayer from 'react-player'
 
 
-const data = [
-  { title: "اختراعات المسلمين ", img: '/assets/imgs/2.png' },
-  { title: "عيسى عليه السلام ", img: '/assets/imgs/1.png' },
-  { title: "اختراعات المسلمين ", img: '/assets/imgs/2.png' },
-  { title: "عيسى عليه السلام ", img: '/assets/imgs/1.png' },
-  { title: "اختراعات المسلمين ", img: '/assets/imgs/2.png' },
-  { title: "عيسى عليه السلام ", img: '/assets/imgs/1.png' },
-  { title: "اختراعات المسلمين ", img: '/assets/imgs/2.png' },
-  { title: "عيسى عليه السلام ", img: '/assets/imgs/1.png' },
-  { title: "اختراعات المسلمين ", img: '/assets/imgs/2.png' },
-  { title: "عيسى عليه السلام ", img: '/assets/imgs/1.png' },
 
-]
 
-const SwiperSection = ({ allVideos, allWords }) => {
+
+const SwiperSection = ({ allVideos, allWords, dir }) => {
 
 
   const breakpoints = {
     300: {
-      slidesPerView: 1.5,
+      slidesPerView: 1.1,
     },
     400: {
-      slidesPerView: 1.5,
+      slidesPerView: 1.2,
     },
     414: {
-      slidesPerView: 1.5,
+      slidesPerView: 1.3,
     },
     450: {
 
@@ -49,10 +39,10 @@ const SwiperSection = ({ allVideos, allWords }) => {
 
 
       slidesPerView: 2.5,
-      spaceBetween: 10,
     },
     1204: {
-      slidesPerView: 3,
+      // slidesPerView: 2.1,
+      slidesPerView: 3.1,
     },
 
 
@@ -77,22 +67,26 @@ const SwiperSection = ({ allVideos, allWords }) => {
             pagination={false}
             modules={[FreeMode, Pagination]}
             className="mySwiper"
+            dir={dir}
+            spaceBetween={16}
           >
 
             {allVideos?.map((card, index) => (
               <SwiperSlide key={index}>
                 <div className={`${styles.box} `} >
                   <div className={styles.img_container}>
-
                     <iframe
-                      width="560"
-                      height="315"
-                      src={`https://www.youtube.com/embed/${card?.video}`}
+                      width="100%"
+                      height="100%"
+                      src={`https://www.youtube.com/embed/${card?.video}?cc_load_policy=1&cc_lang_pref=en&hl=en&controls=1&modestbranding=1&showinfo=0`}
                       title="YouTube video player"
                       frameBorder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       allowFullScreen
                     ></iframe>
+
+
+
                   </div>
 
                   <div className={styles.title}>
@@ -107,40 +101,6 @@ const SwiperSection = ({ allVideos, allWords }) => {
             ))}
 
           </Swiper>
-          {/* <Swiper
-            modules={[Pagination, Navigation, FreeMode]}
-            navigation={false}
-            pagination={false}
-            dir={'rtl'}
-            centeredSlides={true}
-            spaceBetween={16}
-            slidesPerView={1.5}
-            className={styles.swiper}
-            freeMode={true}
-          >
-
-            {data?.map((card, index) => (
-              <SwiperSlide key={index}>
-                <div className={`${styles.box} `} >
-                  <div className={styles.img_container}>
-                    <img src={card.img} alt="" />
-                  </div>
-
-                  <div className={styles.title}>
-                    <h3>{card.title}</h3>
-                  </div>
-
-                  <div className={styles.play_btn}>
-                    <img src="/assets/svgs/playbtn.svg" alt="" />
-                  </div>
-
-
-
-                </div>
-              </SwiperSlide>
-            ))}
-
-          </Swiper> */}
         </div>
       </div>
     </section>

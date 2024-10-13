@@ -48,7 +48,9 @@ const SwiperSection2 = () => {
 
 
   }
+
   return (
+
     <section id='swiper_sec' className={styles.swiper_sec}>
 
       <div className={styles.sec_container}>
@@ -73,13 +75,6 @@ const SwiperSection2 = () => {
                   <div className={styles.img_container}>
                     <img src={card.img} alt="" />
                   </div>
-
-
-
-
-
-
-
                 </div>
               </SwiperSlide>
             ))}
@@ -91,6 +86,7 @@ const SwiperSection2 = () => {
       </div>
 
     </section>
+
   )
 }
 

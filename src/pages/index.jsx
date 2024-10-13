@@ -11,6 +11,8 @@ export default function App({ siteInfo, allWords, dir, allLangs, allVideos, book
   const mainBook = bookLinkData?.languages?.find((lang) => lang.code === locale)
   const mainBookURL = mainBook?.link
 
+
+  console.log(allWords, "allWords")
   return (
     <>
       <Head>
@@ -93,7 +95,7 @@ export default function App({ siteInfo, allWords, dir, allLangs, allVideos, book
 
       <Home allWords={allWords} allVideos={allVideos} dir={dir} allLangs={allLangs} mainBookURL={mainBookURL} />
 
-      <Footer />
+      <Footer allWords={allWords} dir={dir?.data?.dir} />
     </>
   );
 }

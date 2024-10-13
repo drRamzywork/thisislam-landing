@@ -58,7 +58,8 @@ const LangSelector = ({ allLangs, setShowMenuLangs }) => {
             clickable: true,
           }}
           modules={[Pagination]}
-          centeredSlides={false}
+          // centeredSlides={false}
+          centeredSlides={true}
           className={styles.vertical_swiper}>
 
           {allLangs?.data?.map((lang, index) =>
