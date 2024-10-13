@@ -139,7 +139,6 @@ export async function getServerSideProps({ locale }) {
         allWords,
         dir,
       },
-      revalidate: 10,
     };
   } catch (error) {
     console.error("API call error:", error.message);
@@ -149,7 +148,6 @@ export async function getServerSideProps({ locale }) {
         dir: null,
         allWords: null,
       },
-      revalidate: 10,
     };
   }
 }

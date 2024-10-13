@@ -138,7 +138,6 @@ export async function getServerSideProps({ locale }) {
 
 
       },
-      revalidate: 10,
     };
   } catch (error) {
     console.error("API call error:", error.message);
@@ -151,7 +150,6 @@ export async function getServerSideProps({ locale }) {
         allVideos: null,
         bookLinkData: null
       },
-      revalidate: 10,
     };
   }
 }
