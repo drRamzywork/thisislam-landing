@@ -1,26 +1,195 @@
 section.swiper_sec {
   margin-top: 89px;
+  margin-bottom: 89px;
+  a {
+    text-decoration: unset;
+    color: unset;
+  }
   .sec_container {
     @media screen and (min-width: 992px) {
       display: flex;
     }
     .swiper_container {
       @media screen and (min-width: 992px) {
-        width: 921px;
+        width: 100%;
         margin: auto;
       }
       .box {
         position: relative;
         width: 100%;
+        margin: 10px;
+        cursor: pointer;
 
-        .img_container {
+        // .img_container {
+        //   width: 100%;
+        //   img {
+        //     width: 100%;
+        //     height: 228px;
+        //     object-fit: contain;
+        //     transition: all 0.3s ease-in-out;
+        //     cursor: pointer;
+        //   }
+        // }
+
+        overflow: hidden;
+        .cover_container {
+          position: absolute;
           width: 100%;
+          height: 165px;
+          // left: 0;
+          left: 0px;
+          top: 50%;
+          transform: translateY(-50%) scaleX(-1);
+          z-index: -1;
+
+          @media screen and (max-width: 992px) {
+            height: 130px;
+          }
           img {
             width: 100%;
-            height: 228px;
-            object-fit: contain;
+            height: 100%;
+            object-fit: cover;
             transition: all 0.3s ease-in-out;
-            cursor: pointer;
+          }
+        }
+
+        &:hover {
+          .cover_container {
+            img {
+              transform: scale(1.1);
+            }
+          }
+        }
+
+        .box_container {
+          display: flex;
+          align-items: center;
+          gap: 40px;
+
+          @media screen and (max-width: 922px) {
+            gap: 0px;
+          }
+          .title {
+            h3 {
+              min-width: 200px;
+              font-size: 23px;
+              font-weight: 700;
+              line-height: 23px;
+              text-align: center;
+              color: #64111d;
+
+              @media screen and (max-width: 992px) {
+                min-width: unset;
+                padding: 0px 22px;
+              }
+
+              text-shadow: 1px 1px #e3c215;
+            }
+
+            &.muslim {
+              h3 {
+                background-color: #006f93;
+
+                color: #ffffff;
+                font-size: 23px;
+                font-weight: 700;
+                line-height: 29px;
+                text-shadow: unset;
+              }
+            }
+
+            &.new {
+              position: relative;
+              span {
+                position: absolute;
+                top: -40px;
+                left: 0;
+                color: #6f192b;
+
+                display: block;
+
+                font-size: 23px;
+                font-weight: 700;
+                line-height: 29px;
+
+                @media screen and (max-width: 992px) {
+                  top: -30px;
+                }
+              }
+              h3 {
+                background-color: #6f192b;
+
+                color: #ffffff;
+                font-size: 23px;
+                font-weight: 700;
+                line-height: 29px;
+                text-shadow: unset;
+              }
+            }
+          }
+
+          .book_img {
+            img {
+              width: 214px;
+              height: 269px;
+              object-fit: cover;
+
+              @media screen and (max-width: 992px) {
+                width: 173px;
+                height: 225px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+section.swiper_sec[dir="rtl"] {
+  .sec_container {
+    .swiper_container {
+      .box {
+        .cover_container {
+          left: unset;
+          right: 40px;
+          transform: translateY(-50%) scaleX(1);
+          z-index: -1;
+
+          img {
+          }
+        }
+
+        .box_container {
+          .title {
+            h3 {
+            }
+
+            &.muslim {
+              h3 {
+              }
+            }
+
+            &.new {
+              span {
+                left: unset;
+                right: 0;
+              }
+              h3 {
+                background-color: #6f192b;
+
+                color: #ffffff;
+                font-size: 23px;
+                font-weight: 700;
+                line-height: 29px;
+                text-shadow: unset;
+              }
+            }
+          }
+
+          .book_img {
+            img {
+            }
           }
         }
       }

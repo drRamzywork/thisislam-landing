@@ -18,7 +18,7 @@ const Home = ({ allWords, allVideos, dir, allLangs, mainBookURL }) => {
 
       <SwiperSection dir={dir?.data?.dir} allVideos={allVideos} allWords={allWords} />
 
-      <SwiperSection2 />
+      <SwiperSection2 allWords={allWords} dir={dir?.data?.dir} />
     </>
   )
 }
