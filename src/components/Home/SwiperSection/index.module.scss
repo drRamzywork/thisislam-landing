@@ -19,7 +19,7 @@ section.swiper_sec {
       display: flex;
       margin-bottom: 44px;
       @media screen and (min-width: 992px) {
-        margin-top: -20px;
+        transform: translateY(-20px);
       }
       h2 {
         margin: auto;

@@ -2,7 +2,7 @@ section.hero {
   background-color: transparent;
   position: relative;
 
-  z-index: -1;
+  z-index: 3;
   @media screen and (min-width: 992px) {
     display: flex;
   }
@@ -123,7 +123,32 @@ section.hero {
         text-align: justify;
         color: var(--color-gray);
         margin: 0;
+
+        display: inline;
       }
+
+      button.read_more_btn {
+        position: relative;
+        z-index: 9999;
+        background: none;
+        border: none;
+        color: #1d1b70;
+        border-radius: 12px;
+        padding: 0px 8px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          text-decoration: underline;
+        }
+
+        &.active {
+          background-color: #ffe8b169;
+          color: #6f192b;
+          margin-left: 8px;
+        }
+      }
+
       .btn_container {
         display: flex;
         margin-top: 40px;
@@ -228,6 +253,7 @@ section.hero[dir="ltr"] {
 
       @media screen and (max-width: 992px) {
         margin-top: 44px;
+        width: 50%;
       }
       p {
         font-weight: 400;

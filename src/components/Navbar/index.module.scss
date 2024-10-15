@@ -1,8 +1,9 @@
 nav.navbar {
   position: relative;
   height: 323px;
+  // z-index: 9;
+
   @media screen and (min-width: 992px) {
-    z-index: 9;
   }
   .hero_bg {
     position: absolute;

@@ -1,7 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './index.module.scss';
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 const Hero = ({ allWords, dir, mainBookURL }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const mainDesc = allWords?.main_desc;
+  const splitText = mainDesc?.split('...');
+  const mainText = splitText[0] + (mainDesc?.includes('...') ? '...' : '');
+  const remainingText = mainDesc?.slice(mainText.length);
+
+  const toggleExpand = () => {
+    setIsExpanded(!isExpanded);
+  };
+
+
+  console.log(allWords?.read_less, "remainingText")
 
   return (
     <section className={styles.hero} dir={dir}>
@@ -48,7 +60,30 @@ const Hero = ({ allWords, dir, mainBookURL }) => {
           <div className="container">
 
             <div className={styles.desc}>
-              <p>{allWords?.main_desc}</p>
+              <p>
+                {mainText}
+                {/* Only show the rest of the text if it's expanded */}
+                {isExpanded && (
+                  <motion.span
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.5, ease: 'easeInOut' }}
+                  >
+                    {remainingText}
+                  </motion.span>
+                )}
+              </p>
+
+              <motion.button
+                onClick={toggleExpand}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className={`${styles.read_more_btn} ${isExpanded && styles.active}`}
+              >
+                {isExpanded ? allWords?.read_less : allWords?.read_more}
+              </motion.button>
+
 
               <a href={mainBookURL} target='_blanked' className={styles.btn_container}>
                 <button>
@@ -62,7 +97,39 @@ const Hero = ({ allWords, dir, mainBookURL }) => {
 
         <div className="desktop">
           <div className={styles.desc}>
-            <p>{allWords?.main_desc}</p>
+            {/* <p>{allWords?.main_desc}</p> */}
+
+
+            <p>
+              {mainText}
+              {/* Only show the rest of the text if it's expanded */}
+              {isExpanded && (
+                <motion.span
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.5, ease: 'easeInOut' }}
+                >
+                  {remainingText}
+                </motion.span>
+              )}
+            </p>
+
+            <motion.button
+              onClick={toggleExpand}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className={`${styles.read_more_btn} ${isExpanded && styles.active}`}
+            >
+              {isExpanded ? allWords?.read_less : allWords?.read_more}
+            </motion.button>
+
+
+
+
+
+
+
             <a href={mainBookURL} target='_blanked' className={styles.btn_container}>
               <button>
                 {allWords?.main_download}
@@ -74,7 +141,7 @@ const Hero = ({ allWords, dir, mainBookURL }) => {
 
       </motion.div>
 
-    </section>
+    </section >
   )
 }
 
