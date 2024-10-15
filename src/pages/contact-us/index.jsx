@@ -7,9 +7,10 @@ import Footer from '@/components/Footer';
 const ContactUs = ({ dir, allWords, allLangs }) => {
   const contactWords = allWords?.main_contact?.split(" ");
 
+  console.log(contactWords, "allWords?.main_contact")
   return (
     <>
-      <Navbar dir={dir?.data?.dir} allWords={allWords} allLangs={allLangs} />
+      <Navbar dir={dir?.data?.dir} allWords={allWords} allLangs={allLangs} contact={true} />
       <div className={styles.hero_bg}>
         <img src="/assets/imgs/hero_bg.png" alt="" />
       </div>
@@ -23,14 +24,12 @@ const ContactUs = ({ dir, allWords, allLangs }) => {
           <div className={styles.sec_container}>
             <div className={styles.sec_title}>
               <h2>
-                {contactWords && contactWords.length === 2 ? (
+                {contactWords && (
                   <>
                     <span>{contactWords[0]}</span>
                     {` `}
                     {contactWords[1]}
                   </>
-                ) : (
-                  ""
                 )}
 
               </h2>

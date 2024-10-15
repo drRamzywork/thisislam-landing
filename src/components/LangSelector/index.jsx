@@ -4,7 +4,10 @@ import styles from './index.module.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Pagination, } from 'swiper/modules';
+import 'swiper/css/free-mode';
+import 'swiper/css/scrollbar';
+
+import { Pagination, Mousewheel, FreeMode, Scrollbar } from 'swiper/modules';
 import { useRouter } from 'next/router';
 
 
@@ -34,8 +37,6 @@ const LangSelector = ({ allLangs, setShowMenuLangs }) => {
 
 
 
-
-
   return (
     <div
       id='lang_container'
@@ -52,28 +53,40 @@ const LangSelector = ({ allLangs, setShowMenuLangs }) => {
           ref={swiperRef}
           onSlideChange={handleSlideChange}
           direction={"vertical"}
-          slidesPerView={5}
+          slidesPerView={3.5}
           spaceBetween={8}
           pagination={{
             clickable: true,
           }}
-          modules={[Pagination]}
+          modules={[Pagination, Mousewheel, FreeMode, Scrollbar]}
+          mousewheel={true}
+          freeMode={true}
+          scrollbar={true}
+
           // centeredSlides={false}
-          centeredSlides={true}
+          // centeredSlides={true}
           className={styles.vertical_swiper}>
 
           {allLangs?.data?.map((lang, index) =>
-            <SwiperSlide key={index} >
-              <a
-                href={`/${lang.code}${asPath}`}
+            <SwiperSlide key={index}  >
+              <div className={styles.content_container}>
 
-                key={lang.id}
-                className={`${styles.language_item} ${index === selectedIndex ? styles.selected : ''}`}
-                onClick={() => handleClick(index)}
-              >
-                <div className={styles.language_name}>{lang.name}</div>
-                <div className={styles.language_native}>{lang.native}</div>
-              </a>
+                <a
+                  href={`/${lang.code}${asPath}`}
+
+                  key={lang.id}
+                  className={`${styles.language_item} ${index === selectedIndex ? styles.selected : ''}`}
+                  onClick={() => handleClick(index)}
+                >
+
+                  <div className={styles.language_name}>{lang.name}</div>
+                  <div className={styles.language_native}>{lang.native}</div>
+
+                  {index === selectedIndex &&
+                    <div className={styles.selected} />
+                  }
+                </a>
+              </div>
             </SwiperSlide>
           )}
         </Swiper>

@@ -13,10 +13,10 @@
 }
 
 section.contact_us {
-  margin-top: -89px;
+  // margin-top: -89px;
 
   position: relative;
-  // z-index: 9999;
+  z-index: 3;
 
   a {
     text-decoration: unset;
@@ -136,6 +136,7 @@ section.contact_us {
         }
 
         .text_container {
+          text-align: start;
           .title {
             p {
               font-size: 11px;

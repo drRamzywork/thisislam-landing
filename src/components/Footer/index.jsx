@@ -10,9 +10,9 @@ const Footer = ({ allWords, dir }) => {
         <div className="container">
 
           <div className={styles.sec_container}>
-            <div className={styles.logo}>
+            <a href='#' className={styles.logo}>
               <img src="/assets/svgs/logo_white.svg" alt="this is islam" />
-            </div>
+            </a>
 
             <div className={styles.text_container}>
               <p>{allWords?.main_more_info}:</p>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { RxHamburgerMenu } from "react-icons/rx";
 import styles from './index.module.scss';
 import Link from 'next/link';
@@ -6,9 +6,10 @@ import { IoClose } from "react-icons/io5";
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 import LangSelector from '../LangSelector';
+import { IoArrowBackOutline } from "react-icons/io5";
 
 
-const Navbar = ({ dir, allWords, allLangs }) => {
+const Navbar = ({ dir, allWords, allLangs, contact }) => {
   const { locale } = useRouter();
 
   const links = [
@@ -23,10 +24,18 @@ const Navbar = ({ dir, allWords, allLangs }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [showMenuLangs, setShowMenuLangs] = useState(false);
 
+
+  // useEffect(() => {
+  //   if (showMenuLangs) {
+  //     setShowMenu(false)
+  //   }
+
+  // }, [showMenu, showMenuLangs])
+
   return (
     <>
 
-      <nav className={styles.navbar} dir={dir}>
+      <nav className={`${styles.navbar} ${contact === true && styles.contact}`} dir={dir} >
 
         <div className="mobile">
           <div className={styles.hero_bg}>
@@ -72,6 +81,12 @@ const Navbar = ({ dir, allWords, allLangs }) => {
                 transition={{ duration: 0.5, ease: "easeOut" }}
                 className={styles.menu_container_langs} >
 
+                <div className="container position-relative">
+                  <div className={styles.back_container} onClick={() => setShowMenuLangs(false)}>
+                    <IoArrowBackOutline />
+                  </div>
+                </div>
+
                 <div className={styles.hero_bg}>
                   <img src="/assets/imgs/hero_bg.png" alt="" />
                 </div>
@@ -81,6 +96,7 @@ const Navbar = ({ dir, allWords, allLangs }) => {
                   transition={{ duration: 0.5, type: "tween" }} className={styles.logo} onClick={() => setShowMenuLangs(false)}>
                   <img src="/assets/svgs/logo.svg" alt="this is islam logo" />
                 </motion.div>
+
 
 
                 <LangSelector allLangs={allLangs} setShowMenuLangs={setShowMenuLangs} />

@@ -1,7 +1,8 @@
 section.hero {
-  background-color: var(--color-white);
+  background-color: transparent;
   position: relative;
 
+  z-index: -1;
   @media screen and (min-width: 992px) {
     display: flex;
   }
@@ -139,6 +140,7 @@ section.hero {
           font-size: 21.39px;
           font-weight: 700;
           border-radius: 24px;
+          width: fit-content !important;
 
           border: 2.64px solid #ffe7b1;
         }
@@ -239,21 +241,6 @@ section.hero[dir="ltr"] {
         margin-top: 40px;
 
         button {
-          position: relative;
-          z-index: 15;
-          cursor: pointer;
-          margin: auto;
-          border: none;
-          background: var(--grad-gold);
-          height: 41.23px;
-          width: 247px;
-          text-align: center;
-          color: var(--color-white);
-          font-size: 21.39px;
-          font-weight: 700;
-          border-radius: 24px;
-
-          border: 2.64px solid #ffe7b1;
         }
       }
     }
