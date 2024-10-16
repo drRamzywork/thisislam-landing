@@ -101,55 +101,90 @@ export default function App({ siteInfo, allWords, dir, allLangs, allVideos, book
 
 export async function getServerSideProps({ locale }) {
   const baseURL = "https://app.thisislam.net/api";
-  try {
-    const allLangsRes = await fetch(`${baseURL}/all_langs`);
-    if (!allLangsRes.ok) throw new Error("Failed to fetch all_langs");
-    const allLangs = await allLangsRes.json();
+  const allLangsRes = await fetch(`${baseURL}/all_langs`);
+  const allLangs = await allLangsRes.json();
 
-    const allVideosRes = await fetch(`${baseURL}/get-videos/${locale}`);
-    if (!allVideosRes.ok) throw new Error("Failed to fetch all_langs");
-    const allVideos = await allVideosRes.json();
+  const allVideosRes = await fetch(`${baseURL}/get-videos/${locale}`);
+  const allVideos = await allVideosRes.json();
 
-    const siteInfoRes = await fetch(`${baseURL}/get_site_info/${locale}`);
-    if (!siteInfoRes.ok) throw new Error("Failed to fetch get_site_info");
-    const siteInfo = await siteInfoRes.json();
+  const siteInfoRes = await fetch(`${baseURL}/get_site_info/${locale}`);
+  const siteInfo = await siteInfoRes.json();
 
-    const allWordsRes = await fetch(`${baseURL}/get-trans/${locale}`);
-    if (!allWordsRes.ok) throw new Error("Failed to fetch get_site_info");
-    const allWords = await allWordsRes.json();
+  const allWordsRes = await fetch(`${baseURL}/get-trans/${locale}`);
+  const allWords = await allWordsRes.json();
 
-    const dirResponse = await fetch(`${baseURL}/get_direction/${locale}`);
-    if (!dirResponse.ok) throw new Error("Failed to fetch get_direction");
-    const dir = await dirResponse.json();
+  const dirResponse = await fetch(`${baseURL}/get_direction/${locale}`);
+  const dir = await dirResponse.json();
 
-    const bookLinkResponse = await fetch(`https://compaines.thisislam.net/api/company/kim-vakfi`);
-    if (!bookLinkResponse.ok) throw new Error("Failed to fetch get_direction");
-    const bookLinkData = await bookLinkResponse.json();
+  const bookLinkResponse = await fetch(`https://compaines.thisislam.net/api/company/kim-vakfi`);
+  if (!bookLinkResponse.ok) throw new Error("Failed to fetch get_direction");
+  const bookLinkData = await bookLinkResponse.json();
 
 
-    return {
-      props: {
-        allLangs,
-        siteInfo: siteInfo?.data,
-        allWords,
-        dir,
-        allVideos,
-        bookLinkData: bookLinkData?.data
+  return {
+    props: {
+      allLangs,
+      siteInfo: siteInfo?.data,
+      allWords,
+      dir,
+      allVideos,
+      bookLinkData: bookLinkData?.data
 
 
-      },
-    };
-  } catch (error) {
-    console.error("API call error:", error.message);
-    return {
-      props: {
-        allLangs: null,
-        siteInfo: null,
-        allWords: null,
-        dir: null,
-        allVideos: null,
-        bookLinkData: null
-      },
-    };
-  }
+    },
+  };
 }
+// export async function getServerSideProps({ locale }) {
+//   const baseURL = "https://app.thisislam.net/api";
+//   try {
+//     const allLangsRes = await fetch(`${baseURL}/all_langs`);
+//     if (!allLangsRes.ok) throw new Error("Failed to fetch all_langs");
+//     const allLangs = await allLangsRes.json();
+
+//     const allVideosRes = await fetch(`${baseURL}/get-videos/${locale}`);
+//     if (!allVideosRes.ok) throw new Error("Failed to fetch all_langs");
+//     const allVideos = await allVideosRes.json();
+
+//     const siteInfoRes = await fetch(`${baseURL}/get_site_info/${locale}`);
+//     if (!siteInfoRes.ok) throw new Error("Failed to fetch get_site_info");
+//     const siteInfo = await siteInfoRes.json();
+
+//     const allWordsRes = await fetch(`${baseURL}/get-trans/${locale}`);
+//     if (!allWordsRes.ok) throw new Error("Failed to fetch get_site_info");
+//     const allWords = await allWordsRes.json();
+
+//     const dirResponse = await fetch(`${baseURL}/get_direction/${locale}`);
+//     if (!dirResponse.ok) throw new Error("Failed to fetch get_direction");
+//     const dir = await dirResponse.json();
+
+//     const bookLinkResponse = await fetch(`https://compaines.thisislam.net/api/company/kim-vakfi`);
+//     if (!bookLinkResponse.ok) throw new Error("Failed to fetch get_direction");
+//     const bookLinkData = await bookLinkResponse.json();
+
+
+//     return {
+//       props: {
+//         allLangs,
+//         siteInfo: siteInfo?.data,
+//         allWords,
+//         dir,
+//         allVideos,
+//         bookLinkData: bookLinkData?.data
+
+
+//       },
+//     };
+//   } catch (error) {
+//     console.error("API call error:", error.message);
+//     return {
+//       props: {
+//         allLangs: null,
+//         siteInfo: null,
+//         allWords: null,
+//         dir: null,
+//         allVideos: null,
+//         bookLinkData: null
+//       },
+//     };
+//   }
+// }

@@ -6,14 +6,13 @@ const Hero = ({ allWords, dir, mainBookURL }) => {
   const mainDesc = allWords?.main_desc;
   const splitText = mainDesc?.split('...');
   const mainText = splitText[0] + (mainDesc?.includes('...') ? '...' : '');
-  const remainingText = mainDesc?.slice(mainText.length);
-
+  const remainingText = mainDesc?.slice(mainText?.length);
+  //  ||
   const toggleExpand = () => {
     setIsExpanded(!isExpanded);
   };
 
 
-  console.log(allWords?.read_less, "remainingText")
 
   return (
     <section className={styles.hero} dir={dir}>

@@ -7,7 +7,6 @@ import Footer from '@/components/Footer';
 const ContactUs = ({ dir, allWords, allLangs }) => {
   const contactWords = allWords?.main_contact?.split(" ");
 
-  console.log(contactWords, "allWords?.main_contact")
   return (
     <>
       <Navbar dir={dir?.data?.dir} allWords={allWords} allLangs={allLangs} contact={true} />
