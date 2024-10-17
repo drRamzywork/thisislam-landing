@@ -13,12 +13,12 @@ const Navbar = ({ dir, allWords, allLangs, contact }) => {
   const { locale } = useRouter();
 
   const links = [
-    { title: allWords?.main_chose_lang, hasPage: true },
-    { title: allWords?.main_about, link: '#', hasPage: false },
-    { title: allWords?.man_muslim_guide + " " + allWords?.main_new, link: `https://newmuslimguide.com/${locale}`, hasPage: false },
-    { title: allWords?.man_muslim_guide, link: `https://imuslimguide.com/${locale}`, hasPage: false },
-    { title: allWords?.main_cities, link: 'https://kids.thisislam.net/', hasPage: false },
-    { title: allWords?.main_contact, link: '/contact-us', hasPage: false },
+    { title: allWords?.main_chose_lang, hasPage: true, icon: 'langs.svg' },
+    { title: allWords?.main_about, link: '#', hasPage: false, icon: 'book.svg' },
+    { title: allWords?.man_muslim_guide + " " + allWords?.main_new, icon: 'modern.svg', link: `https://newmuslimguide.com/${locale}`, hasPage: false },
+    { title: allWords?.man_muslim_guide, icon: 'bookOpen.svg', link: `https://imuslimguide.com/${locale}`, hasPage: false },
+    { title: allWords?.main_cities, icon: 'cities.svg', link: 'https://kids.thisislam.net/', hasPage: false },
+    { title: allWords?.main_contact, icon: 'contact.svg', link: '/contact-us', hasPage: false },
   ]
 
   const [showMenu, setShowMenu] = useState(false);
@@ -62,10 +62,17 @@ const Navbar = ({ dir, allWords, allLangs, contact }) => {
                   <ul>
                     {links.map((link, idx) =>
                       <li key={idx}>
+
+                        <div className={styles.icon_container}>
+                          <img src={`/assets/svgs/${link.icon}`} alt={link.title} />
+                        </div>
+
                         {link.hasPage === true ?
                           <a onClick={() => setShowMenuLangs(true)} target='_blank'> {link.title}</a>
                           :
                           <Link href={link.link}>{link.title}</Link>}
+
+
 
                       </li>
                     )}

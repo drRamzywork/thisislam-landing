@@ -27,16 +27,21 @@ const SwiperSection2 = ({ allWords, dir }) => {
     640: {
 
 
-      slidesPerView: 1,
+      slidesPerView: 1.5,
     },
     768: {
 
 
-      slidesPerView: 1,
+      slidesPerView: 2,
     },
     1204: {
+      slidesPerView: 2.5,
+    },
+
+    1404: {
       slidesPerView: 3,
     },
+
 
 
   }
@@ -54,14 +59,17 @@ const SwiperSection2 = ({ allWords, dir }) => {
             pagination={false}
             modules={[FreeMode, Autoplay, Pagination]}
             className="mySwiper"
-            autoplay={{
-              delay: 1500,
-              disableOnInteraction: false,
-            }}
+            autoplay={false}
+            // autoplay={{
+            //   delay: 2000,
+            //   disableOnInteraction: false,
+            // }}
 
             spaceBetween={10}
             dir={dir}
 
+            speed={2000}
+            loop={true}
 
           >
 
