@@ -69,6 +69,7 @@ const SwiperSection = ({ allVideos, allWords, dir }) => {
             className="mySwiper"
             dir={dir}
             spaceBetween={16}
+            speed={2000}
           >
 
             {allVideos?.map((card, index) => (
