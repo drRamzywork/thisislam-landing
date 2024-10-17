@@ -50,6 +50,21 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+#swiper_sec {
+  * {
+    user-select: none !important;
+  }
+
+  .swiper-pagination {
+    bottom: -7px;
+  }
+
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    color: red !important;
+    background: var(--grad-gold) !important;
+  }
+}
+
 a {
   color: inherit;
   text-decoration: none;

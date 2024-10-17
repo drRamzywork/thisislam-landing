@@ -49,6 +49,8 @@ const SwiperSection = ({ allVideos, allWords, dir }) => {
   }
 
 
+  console.log(allVideos, "allVideos")
+
   return (
     <section id='swiper_sec' className={styles.swiper_sec}>
       <div className={styles.sec_container}>
@@ -63,9 +65,9 @@ const SwiperSection = ({ allVideos, allWords, dir }) => {
         <div className={styles.swiper_container}>
           <Swiper
             breakpoints={breakpoints}
-            freeMode={true}
-            pagination={false}
-            modules={[FreeMode, Pagination]}
+            modules={[Pagination]}
+            pagination={{ clickable: true }}
+
             className="mySwiper"
             dir={dir}
             spaceBetween={16}

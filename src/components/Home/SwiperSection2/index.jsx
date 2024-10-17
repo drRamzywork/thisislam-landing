@@ -59,17 +59,14 @@ const SwiperSection2 = ({ allWords, dir }) => {
             pagination={false}
             modules={[FreeMode, Autoplay, Pagination]}
             className="mySwiper"
-            autoplay={false}
-            // autoplay={{
-            //   delay: 2000,
-            //   disableOnInteraction: false,
-            // }}
+            autoplay={{
+              delay: 2000,
+              disableOnInteraction: false,
+            }}
 
             spaceBetween={10}
             dir={dir}
-
             speed={2000}
-            loop={true}
 
           >
 
