@@ -24,6 +24,10 @@ section.hero {
       left: 0;
     }
 
+    @media screen and (min-width: 1550px) {
+      display: none;
+    }
+
     img {
       width: 100%;
       height: 100%;
