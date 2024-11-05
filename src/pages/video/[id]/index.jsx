@@ -13,14 +13,13 @@ const Video = ({ siteInfo, dir, allLangs, allWords, getVideoData }) => {
 
 
 
-  const router = useRouter();
+  const { locale } = useRouter();
 
-
-
+  console.log(getVideoData?.video, "getVideoData?.title")
 
   return (
     <>
-      <Head>
+      {/* <Head>
         <title>{`${SiteName} - ${getVideoData?.title}`}</title>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -40,7 +39,48 @@ const Video = ({ siteInfo, dir, allLangs, allWords, getVideoData }) => {
         <meta name="google-site-verification" content="ZMcQQyaUJV6fuXkMty467caCYlHFOkDuUh9qeXZNpYw" />
         <meta property="og:image" content="https://thisislam.net/assets/imgs/logo.png" />
         <meta name="twitter:image" content="https://thisislam.net/assets/imgs/logo.png" />
+      </Head> */}
+
+
+      <Head>
+        <title>{`${SiteName} - ${getVideoData?.title}`}</title>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content={SiteDescription} />
+
+        {/* Primary Open Graph tags */}
+        <meta property="og:type" content="video.other" />
+        <meta property="og:site_name" content={SiteName} />
+        <meta property="og:locale" content={locale} />
+        <meta property="og:url" content={`https://thisislam.net/ar/video/${getVideoData?.video}`} />
+        <meta property="og:title" content={`${SiteName} - ${getVideoData?.title}`} />
+        <meta property="og:description" content={SiteDescription} />
+
+        {/* Video Thumbnail - ensure no other conflicting images */}
+        <meta
+          property="og:image"
+          content={`https://img.youtube.com/vi/${getVideoData?.video}/maxresdefault.jpg`}
+        />
+        <meta property="og:image:width" content="1280" />
+        <meta property="og:image:height" content="720" />
+
+        {/* Twitter Card setup */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@YourTwitterHandle" />
+        <meta name="twitter:title" content={`${SiteName} - ${getVideoData?.title}`} />
+        <meta name="twitter:description" content={SiteDescription} />
+        <meta
+          name="twitter:image"
+          content={`https://img.youtube.com/vi/${getVideoData?.video}/maxresdefault.jpg`}
+        />
+
+        {/* Optional Video Embed link */}
+        <meta property="og:video" content={`https://www.youtube.com/embed/${getVideoData?.video}`} />
+        <meta property="og:video:type" content="text/html" />
+        <meta property="og:video:width" content="1280" />
+        <meta property="og:video:height" content="720" />
       </Head>
+
 
       <Navbar allWords={allWords} dir={dir?.data?.dir} allLangs={allLangs} height={'video'} />
 

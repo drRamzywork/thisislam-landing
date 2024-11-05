@@ -14,7 +14,7 @@ export default function App({ siteInfo, allWords, dir, allLangs, allVideos, book
 
   return (
     <>
-      {/* <Head>
+      <Head>
         <title>{siteInfo?.site_name}</title>
         <meta charSet="UTF-8" />
         <meta
@@ -32,22 +32,22 @@ export default function App({ siteInfo, allWords, dir, allLangs, allVideos, book
         <meta name="apple-mobile-web-app-title" content={siteInfo?.site_name} />
         <link
           rel="apple-touch-icon"
-          href={`https://thisislam.net${imagePath}`}
+          href={`https://portal.thisislam.net${imagePath}`}
         />
         <link
           rel="apple-touch-startup-image"
-          href={`https://thisislam.net${imagePath}`}
+          href={`https://portal.thisislam.net${imagePath}`}
         />
         <meta name="author" content={siteInfo?.site_name} />
         <meta name="description" content={SiteDescription} />
         <link
           rel="canonical"
-          href={`https://thisislam.net${locale}`}
+          href={`https://portal.thisislam.net${locale}`}
         />
         <meta name="msapplication-TileColor" content="#092e47" />
         <meta
           name="msapplication-TileImage"
-          content={`https://thisislam.net${imagePath}`}
+          content={`https://portal.thisislam.net${imagePath}`}
         />
         <meta name="msapplication-square70x70logo" content={imagePath} />
         <meta name="msapplication-square150x150logo" content={imagePath} />
@@ -60,7 +60,7 @@ export default function App({ siteInfo, allWords, dir, allLangs, allVideos, book
         <meta property="og:locale:alternate" content={locale} />
         <meta
           property="og:url"
-          content={`https://thisislam.net${locale}`}
+          content={`https://portal.thisislam.net${locale}`}
         />
         <meta property="og:title" content={siteInfo?.site_name} />
         <meta property="og:description" content={SiteDescription} />
@@ -72,12 +72,12 @@ export default function App({ siteInfo, allWords, dir, allLangs, allVideos, book
         <meta itemProp="author" content={siteInfo?.site_name} />
         <meta
           itemProp="image"
-          content={`https://thisislam.net${imagePath}`}
+          content={`https://portal.thisislam.net${imagePath}`}
         />
         <meta itemProp="description" content={SiteDescription} />
         <meta
           name="twitter:image"
-          content={`https://thisislam.net${imagePath}`}
+          content={`https://portal.thisislam.net${imagePath}`}
         />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@" />
@@ -85,49 +85,12 @@ export default function App({ siteInfo, allWords, dir, allLangs, allVideos, book
         <meta name="twitter:title" content={siteInfo?.site_name} />
         <meta
           name="twitter:image:src"
-          content={`https://thisislam.net${imagePath}`}
+          content={`https://portal.thisislam.net${imagePath}`}
         />
         <meta name="twitter:description" content={SiteDescription} />
-      </Head> */}
-
-      <Head>
-        <title>{`${SiteName} - ${getVideoData?.title}`}</title>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content={SiteDescription} />
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="keywords" content={SiteKeyWords} />
-
-        {/* Open Graph meta tags for social media */}
-        <meta property="og:title" content={`${SiteName} - ${getVideoData?.title}`} />
-        <meta property="og:description" content={SiteDescription} />
-        <meta property="og:url" content={"https://thisislam.net/ar/video/22"} />
-        <meta property="og:type" content="video.other" />
-
-        {/* Video Thumbnail */}
-        <meta
-          property="og:image"
-          content={`https://img.youtube.com/vi/${getVideoData?.video}/maxresdefault.jpg`}
-        />
-        <meta property="og:image:width" content="1280" />
-        <meta property="og:image:height" content="720" />
-
-        {/* Twitter card setup */}
-        <meta name="twitter:domain" content="https://thisislam.net/" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`${SiteName} - ${getVideoData?.title}`} />
-        <meta name="twitter:description" content={SiteDescription} />
-        <meta
-          name="twitter:image"
-          content={`https://img.youtube.com/vi/${getVideoData?.video}/maxresdefault.jpg`}
-        />
-
-        {/* Optional YouTube embed link for enhanced social media previews */}
-        <meta property="og:video" content={`https://www.youtube.com/embed/${getVideoData?.video}`} />
-        <meta property="og:video:type" content="text/html" />
-        <meta property="og:video:width" content="1280" />
-        <meta property="og:video:height" content="720" />
       </Head>
+
+
 
       <Home allWords={allWords} allVideos={allVideos} dir={dir} allLangs={allLangs} mainBookURL={mainBookURL} />
 
