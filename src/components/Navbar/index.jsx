@@ -9,7 +9,7 @@ import LangSelector from '../LangSelector';
 import { IoArrowBackOutline } from "react-icons/io5";
 
 
-const Navbar = ({ dir, allWords, allLangs, contact }) => {
+const Navbar = ({ dir, allWords, allLangs, contact, height }) => {
   const { locale } = useRouter();
 
   const links = [
@@ -35,7 +35,7 @@ const Navbar = ({ dir, allWords, allLangs, contact }) => {
   return (
     <>
 
-      <nav className={`${styles.navbar} ${contact === true && styles.contact}`} dir={dir} >
+      <nav className={`${styles.navbar} ${height} ${contact === true && styles.contact}`} dir={dir} >
 
         <div className="mobile">
           <div className={styles.hero_bg}>
