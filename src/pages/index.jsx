@@ -32,22 +32,22 @@ export default function App({ siteInfo, allWords, dir, allLangs, allVideos, book
         <meta name="apple-mobile-web-app-title" content={siteInfo?.site_name} />
         <link
           rel="apple-touch-icon"
-          href={`https://portal.thisislam.net${imagePath}`}
+          href={`https://thisislam.net${imagePath}`}
         />
         <link
           rel="apple-touch-startup-image"
-          href={`https://portal.thisislam.net${imagePath}`}
+          href={`https://thisislam.net${imagePath}`}
         />
         <meta name="author" content={siteInfo?.site_name} />
         <meta name="description" content={SiteDescription} />
         <link
           rel="canonical"
-          href={`https://portal.thisislam.net${locale}`}
+          href={`https://thisislam.net${locale}`}
         />
         <meta name="msapplication-TileColor" content="#092e47" />
         <meta
           name="msapplication-TileImage"
-          content={`https://portal.thisislam.net${imagePath}`}
+          content={`https://thisislam.net${imagePath}`}
         />
         <meta name="msapplication-square70x70logo" content={imagePath} />
         <meta name="msapplication-square150x150logo" content={imagePath} />
@@ -60,7 +60,7 @@ export default function App({ siteInfo, allWords, dir, allLangs, allVideos, book
         <meta property="og:locale:alternate" content={locale} />
         <meta
           property="og:url"
-          content={`https://portal.thisislam.net${locale}`}
+          content={`https://thisislam.net${locale}`}
         />
         <meta property="og:title" content={siteInfo?.site_name} />
         <meta property="og:description" content={SiteDescription} />
@@ -72,12 +72,12 @@ export default function App({ siteInfo, allWords, dir, allLangs, allVideos, book
         <meta itemProp="author" content={siteInfo?.site_name} />
         <meta
           itemProp="image"
-          content={`https://portal.thisislam.net${imagePath}`}
+          content={`https://thisislam.net${imagePath}`}
         />
         <meta itemProp="description" content={SiteDescription} />
         <meta
           name="twitter:image"
-          content={`https://portal.thisislam.net${imagePath}`}
+          content={`https://thisislam.net${imagePath}`}
         />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@" />
@@ -85,7 +85,7 @@ export default function App({ siteInfo, allWords, dir, allLangs, allVideos, book
         <meta name="twitter:title" content={siteInfo?.site_name} />
         <meta
           name="twitter:image:src"
-          content={`https://portal.thisislam.net${imagePath}`}
+          content={`https://thisislam.net${imagePath}`}
         />
         <meta name="twitter:description" content={SiteDescription} />
       </Head>
